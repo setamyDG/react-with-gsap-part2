@@ -1,10 +1,10 @@
 import React, { useRef, useEffect } from 'react';
 import './App.css';
-import {ReactComponent as Logo } from './logo.svg';
-import {ReactComponent as JsLogo } from './javascript.svg';
-import {ReactComponent as ReduxLogo } from './redux.svg';
-import {ReactComponent as FbLogo } from './facebook.svg';
-import {ReactComponent as TwitterLogo } from './twitter.svg';
+import { ReactComponent as Logo } from './logo.svg';
+import { ReactComponent as JsLogo } from './javascript.svg';
+import { ReactComponent as ReduxLogo } from './redux.svg';
+import { ReactComponent as FbLogo } from './facebook.svg';
+import { ReactComponent as TwitterLogo } from './twitter.svg';
 import fromBottomToTop from './animations';
 
 const App = () => {

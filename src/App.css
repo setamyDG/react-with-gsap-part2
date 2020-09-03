@@ -1,7 +1,7 @@
 .App {
   text-align: center;
   background: #282c34;
-  height: 150vh;
+  height: 250vh;
   display: flex;
   flex-flow: column;
   justify-content: center;
@@ -21,15 +21,4 @@
 
 .Icons-Container {
   margin-top: 25px;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }

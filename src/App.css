@@ -1,13 +1,22 @@
 .App {
   text-align: center;
   background: #282c34;
-  height: 200vh;
+  height: 150vh;
   display: flex;
+  flex-flow: column;
   justify-content: center;
   align-items: center;
   color: white;
   text-transform: uppercase;
-  font-size: 32px;
+  font-size: 24px;
+}
+
+.Logo {
+  width: 100px;
+}
+
+.Icons-Container {
+  margin-top: 25px;
 }
 
 .App-header {

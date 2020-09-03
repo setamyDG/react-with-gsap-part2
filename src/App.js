@@ -12,28 +12,34 @@ const App = () => {
   const subTitleRef = useRef(null);
   const reactLogoRef = useRef(null);
   const textRef = useRef(null);
+  const textRef2 = useRef(null);
+  const textRef3 = useRef(null);
   const animateChildren = useRef(null);
 
   useEffect(() => {
-    fromBottomToTop({target: titleRef.current, start: '0px, 50%'});
-    fromBottomToTop({target: subTitleRef.current, start: '0px, 50%'});
-    fromBottomToTop({target: reactLogoRef.current, start: '0px, 50%'});
-    fromBottomToTop({target: textRef.current, start: '0px, 50%'});
-    fromBottomToTop({target: animateChildren.current.children, start: '0px 50%', stagger: 0.2});
+    fromBottomToTop({target: titleRef.current, scaleX: 0.5});
+    fromBottomToTop({target: subTitleRef.current});
+    fromBottomToTop({target: reactLogoRef.current, scaleX: -1.5});
+    fromBottomToTop({target: textRef.current});
+    fromBottomToTop({target: textRef2.current});
+    fromBottomToTop({target: textRef3.current, scaleX: 0.5});
+    fromBottomToTop({target: animateChildren.current.children, stagger: 0.2, scaleX: 0});
   }, []);
 
   return (
     <div className="App">
       <p ref={titleRef}> You can animate everything!</p>
       <p ref={subTitleRef}> in so many ways!</p>
+      <p ref={textRef}>for example one single element</p>
       <Logo ref={reactLogoRef} className="Logo"/>
-      <p ref={textRef}>Learn more with gsap and make your site alive</p>
+      <p ref={textRef2}>or multitple elements</p>
       <div className="Icons-Container" ref={animateChildren}> 
         <JsLogo className="Logo"/>
         <ReduxLogo className="Logo"/>
         <TwitterLogo className="Logo"/>
         <FbLogo className="Logo"/>
       </div>
+      <p className="Summary-Text" ref={textRef3}>Learn more with gsap animations to make your site alive!</p>
     </div>
   );
 }

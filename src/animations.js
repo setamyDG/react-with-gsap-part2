@@ -3,15 +3,16 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const fromBottomToTop = ({ target, stagger, start, duration = 1 }) => {
+const fromBottomToTop = ({ target, stagger, start = '-20px, 50%', duration = 1, scaleX}) => {
   gsap.from(target, {
     scrollTrigger: {
       trigger: target,
-      start: start,
+      start,
       markers: true
     },
     y: '+=50',
     autoAlpha: 0,
+    scaleX,
     duration,
     stagger: stagger
   });

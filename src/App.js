@@ -1,13 +1,11 @@
 import React, { useRef, useEffect } from 'react';
 import './App.css';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import {ReactComponent as Logo } from './logo.svg';
 import {ReactComponent as JsLogo } from './javascript.svg';
 import {ReactComponent as ReduxLogo } from './redux.svg';
 import {ReactComponent as FbLogo } from './facebook.svg';
 import {ReactComponent as TwitterLogo } from './twitter.svg';
-gsap.registerPlugin(ScrollTrigger);
+import fromBottomToTop from './animations';
 
 const App = () => {
   const titleRef = useRef(null);
@@ -17,57 +15,11 @@ const App = () => {
   const animateChildren = useRef(null);
 
   useEffect(() => {
-    gsap.from(titleRef.current, {
-      scrollTrigger: {
-        trigger: titleRef.current,
-        start: '-50px, 50%',
-        markers: true,
-      },
-      y: 100,
-      opacity: 0,
-      duration: 2,
-    });
-    gsap.from(subTitleRef.current, {
-      scrollTrigger: {
-        trigger: titleRef.current,
-        start: '-20px, 50%',
-        markers: true,
-      },
-      y: 100,
-      opacity: 0,
-      duration: 2,
-    });
-    gsap.from(reactLogoRef.current, {
-      scrollTrigger: {
-        trigger: titleRef.current,
-        start: '20px, 50%',
-        markers: true,
-      },
-      y: 100,
-      opacity: 0,
-      duration: 2,
-    });
-    gsap.from(textRef.current, {
-      scrollTrigger: {
-        trigger: textRef.current,
-        start: '0px, 50%',
-        markers: true,
-      },
-      y: 100,
-      opacity: 0,
-      duration: 2,
-    });
-    gsap.from(animateChildren.current.children, {
-      scrollTrigger: {
-        trigger: textRef.current.children,
-        start: '60%, 50%',
-        markers: true,
-      },
-      y: 100,
-      stagger: 0.2,
-      opacity: 0,
-      duration: 1,
-    });
+    fromBottomToTop({target: titleRef.current, start: '0px, 50%'});
+    fromBottomToTop({target: subTitleRef.current, start: '0px, 50%'});
+    fromBottomToTop({target: reactLogoRef.current, start: '0px, 50%'});
+    fromBottomToTop({target: textRef.current, start: '0px, 50%'});
+    fromBottomToTop({target: animateChildren.current.children, start: '0px 50%', stagger: 0.2});
   }, []);
 
   return (
